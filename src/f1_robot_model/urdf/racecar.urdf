@@ -179,7 +179,7 @@
   <xacro:wheel_transmission name="right_front_wheel" />
 
   <!-- Add Hokuyo laser scanner -->
-<!--
+
   <link name="laser">
     <inertial>
       <xacro:hokuyo_inertial_params />
@@ -205,7 +205,30 @@
     <child link="laser" />
     <axis xyz="0 0 1" />
   </joint>
--->
+
+  <link name="imu">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+        <material name="blue" />
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="0.1 0.0 0.025" rpy="0.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="imu"/>
+    <axis xyz="0.0 0.0 1.0"/>
+  </joint>
+
   <!-- Add the remaining xacros -->
 
   <xacro:include filename="$(find f1_robot_model)/urdf/racecar.gazebo" />
@@ -213,10 +236,10 @@
   <!--If you want to use Depth camera, Plz Uncomment Code-->
   <!--xacro:include filename="$(find f1_robot_model)/urdf/depth_camera.xacro"/-->
   <!--If you want to use stereo camera with 2-mono camera, Plz Uncomment Codes-->
-  <xacro:include filename="$(find f1_robot_model)/urdf/left_camera.xacro"/>
-  <xacro:include filename="$(find f1_robot_model)/urdf/right_camera.xacro"/>
+  <!--xacro:include filename="$(find f1_robot_model)/urdf/left_camera.xacro"/-->
+  <!--xacro:include filename="$(find f1_robot_model)/urdf/right_camera.xacro"/-->
   <!--If you want to use 3D LiDAR, Plz Uncomment Code-->
-  <xacro:include filename="$(find f1_robot_model)/urdf/3dlidar.xacro"/>
+  <!--xacro:include filename="$(find f1_robot_model)/urdf/3dlidar.xacro"/-->
 </robot>
 
 
