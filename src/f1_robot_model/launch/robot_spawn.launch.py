@@ -4,7 +4,6 @@ import launch_ros
 from launch_ros.actions import Node
 import os
 from launch.actions import DeclareLaunchArgument
-from ament_index_python.packages import get_package_share_directory
 
 
 def generate_launch_description():
@@ -74,7 +73,7 @@ def generate_launch_description():
         ],
         output='screen'
     )
-
+    # if you want to use ackermanndrivestamped topic to control vehicle, plz uncomment node codes
     """
     ackermann_to_twist_converter_node = Node(
         package='f1_robot_model',

@@ -1,4 +1,4 @@
-## cartographer_ros 변화 내역 정리
+## 변화 내역 정리
 
 ### 2025.02.10 기준
 - **CMakeLists.txt 파일 수정** : `/odom` 토픽 관련 내용 추가
@@ -22,3 +22,9 @@ install(TARGETS trajectory_to_odom DESTINATION lib/${PROJECT_NAME})
     ```
 
 - **`/src`에 `trajectory_to_odom.cpp` 코드 추가**
+- `Cartographer`를 활용한 Localization 및 Odometry 정보 출력 추가
+
+### 2025.02.16 기준
+- **AMCL 관련 launch 파일 및 config 파일 추가** : AMCL을 활용한 Localization 가능
+- **teleop_twist_joy 및 MXswitch 컨트롤러 통합** : 매핑시 조이스틱을 활용한 효율적 매핑 가능
+- **3D LiDAR 시뮬레이션 기능 추가** : velodyne LiDAR를 활용한 3D LiDAR 시뮬레이션 가능

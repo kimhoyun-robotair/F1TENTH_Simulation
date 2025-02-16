@@ -21,3 +21,9 @@
     bool publish_tracked_pose = true;
     ```
 - **Added `trajectory_to_odom.cpp` code** to the `/src` directory.
+- Added Localization and Odometry output using `Cartographer`.
+
+### As of 2025.02.16
+- **Added launch and configuration files for AMCL**: Enables Localization using AMCL.
+- **Integrated `teleop_twist_joy` and MXswitch controllers**: Enables efficient mapping using a joystick during mapping.
+- **Added 3D LiDAR simulation feature**: Enables 3D LiDAR simulation using Velodyne LiDAR.

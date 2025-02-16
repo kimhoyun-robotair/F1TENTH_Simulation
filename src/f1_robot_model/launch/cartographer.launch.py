@@ -7,13 +7,17 @@ from launch.actions import DeclareLaunchArgument
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
+    # pkg name and pkg path
     package_name = "f1_robot_model"
     pkg_share = launch_ros.substitutions.FindPackageShare(package='f1_robot_model').find('f1_robot_model')
+    # model, world, config path
     default_model_path = os.path.join(pkg_share, 'urdf/racecar.urdf')
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
-    world_path=os.path.join(pkg_share, 'world/demomap/model.sdf')
+    world_path=os.path.join(pkg_share, 'world/demomap_2/model.sdf')
+    # use sim time or not?
     use_sim_time = LaunchConfiguration('use_sim_time')
 
+    # cartographer setting file 1
     cartographer_config_dir = LaunchConfiguration('cartographer_config_dir',
                                                 default=os.path.join(get_package_share_directory(package_name) , 'config'))
     # cartographer setting file 2
@@ -26,6 +30,9 @@ def generate_launch_description():
     position = [0.0, 0.0, 0.0]
     # [Roll, Pitch, Yaw]
     orientation = [0.0, 0.0, 0.0]
+
+    # joy_teleop config file path
+    joy_teleop_config_file = os.path.join(pkg_share, 'config/MXswitch.config.yaml')
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(
         name='use_sim_time',
@@ -88,6 +95,24 @@ def generate_launch_description():
         arguments=['-resolution', resolution, '-publish_period_sec', publish_period_sec]
     )
 
+    joy = Node(
+        package='joy',
+        executable='joy_node',
+        name='joy_node',
+        parameters=[{
+            'device_id': 0,          # ls /dev/input/js* to find the device id
+            'deadzone': 0.3,         # Deadzone for the joystick axes
+            'autorepeat_rate': 20.0, # Autorepeat rate for the joystick buttons
+        }]
+    )
+
+    joy_teleop = Node(
+        package='teleop_twist_joy',
+        executable='teleop_node',
+        name='teleop_twist_joy_node',
+        parameters=[joy_teleop_config_file]
+    )
+
     return launch.LaunchDescription([
 
         launch.actions.DeclareLaunchArgument(name='model', default_value=default_model_path,
@@ -103,4 +128,6 @@ def generate_launch_description():
         ackermann_to_twist_converter_node,
         cartographer,
         cartographer_grid,
+        joy,
+        joy_teleop,
     ])
