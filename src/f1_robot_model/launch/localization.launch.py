@@ -13,7 +13,7 @@ def generate_launch_description():
     # model path and config, world path
     default_model_path = os.path.join(pkg_share, 'urdf/racecar.urdf')
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
-    world_path=os.path.join(pkg_share, 'world/demomap/model.sdf')
+    world_path=os.path.join(pkg_share, 'world/demomap_2/model.sdf')
     # use sim time? or not
     use_sim_time = LaunchConfiguration('use_sim_time')
 
@@ -23,7 +23,7 @@ def generate_launch_description():
     # cartographer setting file 2
     configuration_basename = LaunchConfiguration('configuration_basename', default='localization.lua')
     pbstream_file = LaunchConfiguration('pbstream_dir',
-                                                default=os.path.join(get_package_share_directory(package_name) , 'map', 'testmap.pbstream'))
+                                                default=os.path.join(get_package_share_directory(package_name) , 'map', 'pathtest2.pbstream'))
     resolution = LaunchConfiguration('resolution', default='0.05')
     publish_period_sec = LaunchConfiguration('publish_period_sec', default='0.5')
 

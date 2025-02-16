@@ -16,12 +16,13 @@ public:
     }
 
 private:
+    const float wheelbase = 0.4;
     void ackermannCallback(const ackermann_msgs::msg::AckermannDriveStamped::SharedPtr msg)
     {
         geometry_msgs::msg::Twist twist_msg;
 
         // Convert Ackermann steering_angle to Twist angular.z
-        twist_msg.angular.z = msg->drive.steering_angle;
+        twist_msg.angular.z = ((msg->drive.speed * std::tan(msg->drive.steering_angle)) / wheelbase);
 
         // Convert Ackermann speed to Twist linear.x
         twist_msg.linear.x = msg->drive.speed;

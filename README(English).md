@@ -23,3 +23,9 @@ We would like to express our gratitude to the following open-source developers, 
 - [f1tenth_gtc_tutorial](https://github.com/linklab-uva/f1tenth_gtc_tutorial)
 - [f1_robot_model](https://github.com/armando-genis/f1_robot_model)
 - [velodyne_simulator](https://bitbucket.org/DataspeedInc/velodyne_simulator.git/src)
+
+### TODO List
+- [ ] Add GPS Sensor to Simulation
+- [ ] Optimize PID Gain for Ackermann Dirve Control Plugin
+- [ ] Add and Verify Nav2
+- [ ] Add V-SLAM(or VIO) like VINS, 3D-LiDAR Based SLAM like FAST-LIO, LIO-SAM etc..
