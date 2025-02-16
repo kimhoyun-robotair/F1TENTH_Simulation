@@ -6,6 +6,7 @@
 - 기본적으로 모든 launch 파일에 `joy_node` 및 `teleop_twist_joy` 통합 (필요시 주석을 해제하고 사용할 것)
 
 ### 1. 설치 방법
+---
 ```bash
 # step 1.
 $ sudo apt update
@@ -26,6 +27,7 @@ $ source install/setup.bash
 ```
 
 ### 2. gazebo classic simulation 사용 방법
+---
 **1. 순수하게 로봇만 `gazebo`에 `spawn`하고 싶다면**
 ```bash
 $ ros2 launch f1_robot_model robot_spawn.launch.py
@@ -53,6 +55,7 @@ $ ros2 launch f1_robot_model display.launch.py
 
 
 ### 3. cartographer를 통해 simluation 하는 방법
+---
 **1. cartographer를 이용해서 Mapping을 수행하고 싶다면**
 ```bash
 $ ros2 launch f1_robot_model cartographer.launch.py
@@ -77,6 +80,7 @@ $ ros2 launch f1_robot_model localization.launch.py
 ```
 
 ### 4. AMCL을 사용하고 싶다면
+---
 **1. AMCL 사용하기**
 ```bash
 $ ros2 launch f1_robot_model amcl.launch.py
