@@ -77,7 +77,7 @@ $ ros2 launch f1_robot_model localization.launch.py
 ```
 
 ### 4. AMCL을 사용하고 싶다면
-** 1. AMCL 사용하기 **
+**1. AMCL 사용하기**
 ```bash
 $ ros2 launch f1_robot_model amcl.launch.py
 ```
