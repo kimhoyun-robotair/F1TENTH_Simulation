@@ -28,3 +28,6 @@ install(TARGETS trajectory_to_odom DESTINATION lib/${PROJECT_NAME})
 - **AMCL 관련 launch 파일 및 config 파일 추가** : AMCL을 활용한 Localization 가능
 - **teleop_twist_joy 및 MXswitch 컨트롤러 통합** : 매핑시 조이스틱을 활용한 효율적 매핑 가능
 - **3D LiDAR 시뮬레이션 기능 추가** : velodyne LiDAR를 활용한 3D LiDAR 시뮬레이션 가능
+
+### 2025.02.17 기준
+- **GPS 플러그인 추가** : GPS 데이터 및 토픽을 시뮬레이션 안에서 활용 가능

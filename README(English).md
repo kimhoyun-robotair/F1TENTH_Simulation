@@ -4,6 +4,13 @@
 ---
 This package was developed with the aim of creating a Gazebo Classic-based simulator for F1TENTH. Since this package is a meta-package that includes several sub-packages, its usage is quite complex, and multiple documents are provided. It is therefore recommended that you carefully read the documentation before proceeding.
 
+Additionally, this package provides simulation functionality for the following sensors:
+- 2D LiDAR
+- Depth Camera
+- Stereo Camera
+- 3D LiDAR
+- IMU and GPS
+
 If you encounter any issues or have any questions regarding its usage, please contact **alpha12334@naver.com** or **suberkut76@gmail.com**.
 
 This package is composed of the following components:

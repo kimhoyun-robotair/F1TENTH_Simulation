@@ -27,3 +27,6 @@
 - **Added launch and configuration files for AMCL**: Enables Localization using AMCL.
 - **Integrated `teleop_twist_joy` and MXswitch controllers**: Enables efficient mapping using a joystick during mapping.
 - **Added 3D LiDAR simulation feature**: Enables 3D LiDAR simulation using Velodyne LiDAR.
+
+### As of February 17, 2025
+- **GPS Plugin Added**: GPS data and topics can now be utilized within the simulation.
