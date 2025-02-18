@@ -32,7 +32,6 @@ We would like to express our gratitude to the following open-source developers, 
 - [velodyne_simulator](https://bitbucket.org/DataspeedInc/velodyne_simulator.git/src)
 
 ### TODO List
-- [ ] Add GPS Sensor to Simulation
 - [ ] Optimize PID Gain for Ackermann Dirve Control Plugin
 - [ ] Add and Verify Nav2
 - [ ] Add V-SLAM(or VIO) like VINS, 3D-LiDAR Based SLAM like FAST-LIO, LIO-SAM etc..
